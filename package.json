@@ -2,6 +2,11 @@
   "name": "antd-compontents",
   "version": "0.1.0",
   "private": true,
+  "author": "liangmiaomiao <mmliang30@126.com>",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Sylvia230/antd-components.git"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
