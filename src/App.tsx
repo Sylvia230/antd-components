@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import { Layout, Menu } from 'antd';
 import { Icon } from '@ant-design/compatible';
 // import { Switch, Route, withRouter, NavLink, RouteProps } from 'react-router-dom';
-import { Switch, Route, NavLink } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 import NotFound from '../src/pages/NotFound/index';
 import { routeCfg, IRouteCfgProps } from './config';
 import '../src/assets/style.less';
-
 const { Header, Sider, Content } = Layout;
 const { SubMenu } = Menu;
 
 export function RouteWithSubRoutes(route: IRouteCfgProps) {
   return (
     <Route
+      exact
       path={route.path}
       render={(props) => (
         // pass the sub-routes down to keep nesting
@@ -58,10 +58,10 @@ const App: React.FC = () => {
                     {routeItem.routes.map((subItem) => {
                       return (
                         <Menu.Item key={subItem.key}>
-                          <NavLink to={subItem.path}>
+                          <Link to={subItem.path}>
                             {subItem.icon && <Icon type={subItem.icon} />}
                             <span>{subItem.title}</span>
-                          </NavLink>
+                          </Link>
                         </Menu.Item>
                       );
                     })}
@@ -70,10 +70,10 @@ const App: React.FC = () => {
               } else if (routeItem.component) {
                 return (
                   <Menu.Item key={routeItem.key}>
-                    <NavLink to={routeItem.path}>
+                    <Link to={routeItem.path}>
                       {routeItem.icon && <Icon type={routeItem.icon} />}
                       <span>{routeItem.title}</span>
-                    </NavLink>
+                    </Link>
                   </Menu.Item>
                 );
               }

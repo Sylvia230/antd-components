@@ -2,7 +2,7 @@ import Home from './pages/Home';
 import Component from './pages/Component';
 
 // components
-import Card from '../src/components/card/demo';
+import Card from '../src/components/card/index';
 import Descriptions from '../src/components/descriptions/demo';
 import EmptyLine from '../src/components/empty-line/demo';
 
